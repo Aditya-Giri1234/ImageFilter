@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg_image"
+    tools:context=".ui.fragment.SplashFragment">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_bg" />
+
+    <!--  Set GuildLine   -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guildLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guildLineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guildLineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSavedImage"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_45sdp"
+        android:backgroundTint="@color/buttonSavedImage"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:includeFontPadding="true"
+        android:text="@string/saved_images"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:cornerRadius="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@id/guildLineBottom"
+        app:layout_constraintEnd_toEndOf="@id/guildLineEnd"
+        app:layout_constraintStart_toStartOf="@id/guildLineStart" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEditImage"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:backgroundTint="@color/buttonEditNewImage"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:includeFontPadding="false"
+        android:text="@string/edit_new_image"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:cornerRadius="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnSavedImage"
+        app:layout_constraintEnd_toEndOf="@id/guildLineEnd"
+        app:layout_constraintStart_toStartOf="@id/guildLineStart" />
+
+
+       <TextView
+           android:id="@+id/tvSubTitle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/let_s_create_something_new"
+           android:fontFamily="@font/poppins_regular"
+           android:layout_marginBottom="@dimen/_16sdp"
+           android:includeFontPadding="false"
+           android:textColor="@color/white"
+           android:textSize="@dimen/_13ssp"
+           app:layout_constraintStart_toStartOf="@id/guildLineStart"
+           app:layout_constraintBottom_toTopOf="@id/btnEditImage"/>
+    <TextView
+           android:id="@+id/tvTitle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/image_filter"
+           android:fontFamily="@font/poppins_bold"
+           android:layout_marginBottom="@dimen/_4sdp"
+           android:includeFontPadding="false"
+           android:textColor="@color/white"
+           android:textSize="@dimen/_20ssp"
+           app:layout_constraintStart_toStartOf="@id/guildLineStart"
+           app:layout_constraintBottom_toTopOf="@id/tvSubTitle"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/splashFragment">
+
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.aditya.imagefilter.ui.fragment.SplashFragment"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_editImageFragment"
+            app:destination="@id/editImageFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_savedImageFragment"
+            app:destination="@id/savedImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editImageFragment"
+        android:name="com.aditya.imagefilter.ui.fragment.EditImageFragment"
+        android:label="edit_image_activity"
+        tools:layout="@layout/edit_image_activity" >
+
+
+        <argument
+            android:name="uriArgument"
+            app:argType="android.net.Uri" />
+        <action
+            android:id="@+id/action_editImageFragment_to_filterImageFragment"
+            app:destination="@id/filterImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterImageFragment"
+        android:name="com.aditya.imagefilter.ui.fragment.FilterImageFragment"
+        android:label="fragment_filter_image"
+        tools:layout="@layout/fragment_filter_image" >
+        <argument
+            android:name="imagePath"
+            app:argType="android.net.Uri" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedImageFragment"
+        android:name="com.aditya.imagefilter.ui.fragment.SavedImageFragment"
+        android:label="fragment_saved_image"
+        tools:layout="@layout/fragment_saved_image" >
+        <action
+            android:id="@+id/action_savedImageFragment_to_filterImageFragment"
+            app:destination="@id/filterImageFragment" />
+    </fragment>
+</navigation>
